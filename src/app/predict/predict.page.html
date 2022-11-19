@@ -15,14 +15,14 @@
 
   <ion-item style="margin-top:16px; margin-left:16px; margin-right:16px;" counter="true">
     <ion-label position="floating">Name</ion-label>
-    <ion-input [(ngModel)]="prediction.name" [clearInput]="true" maxlength="32"></ion-input>
+    <ion-input [(ngModel)]="temp_name" [clearInput]="true" maxlength="32"></ion-input>
   </ion-item>
 
-  <ion-button style="position:fixed; left:16px; right:16px; bottom:16px;" (click)="predict()" color="dark" expand="block" [disabled]='prediction.name == ""'>
+  <ion-button style="position:fixed; left:16px; right:16px; bottom:16px;" (click)="predict()" color="dark" expand="block" [disabled]='temp_name == ""'>
     <ion-icon slot="start" name="diamond-outline"></ion-icon>
     Predict
   </ion-button>
-  <ion-card style="position: fixed; left: 8px; right:8px; bottom: 20%; top:40%;" *ngIf="available_prediction">
+  <ion-card style="position: fixed; left: 8px; right:8px; bottom: 20%; top:40%;" *ngIf="!emptyPrediction()">
     <ion-card-header>
       <ion-card-title>Prediction</ion-card-title>
       <ion-card-subtitle>{{name}}</ion-card-subtitle>
