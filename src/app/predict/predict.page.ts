@@ -1,3 +1,4 @@
+import { PredictionService } from './../services/prediction.service';
 import { Component } from '@angular/core';
 import { PredictionModel } from '../models/prediction.model';
 
@@ -10,7 +11,7 @@ export class PredictPage {
 
   prediction: PredictionModel = { age: 0, gender: "", name: "", nationality: [], isEmpty: () => { return this.prediction.age == 0 || this.prediction.name == "" || this.prediction.gender == "" } };
 
-  constructor() { }
+  constructor(predictionService: PredictionService) { }
 
   get name(): String {
 
@@ -39,6 +40,11 @@ export class PredictPage {
   get age(): Number {
 
     return this.prediction.age;
+
+  }
+
+  predict() {
+
 
   }
 

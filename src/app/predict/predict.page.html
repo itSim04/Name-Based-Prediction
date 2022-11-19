@@ -18,7 +18,7 @@
     <ion-input [(ngModel)]="prediction.name" [clearInput]="true" maxlength="32"></ion-input>
   </ion-item>
 
-  <ion-button style="position:fixed; left:16px; right:16px; bottom:16px;" color="dark" expand="block" [disabled]='prediction.name == ""'>
+  <ion-button style="position:fixed; left:16px; right:16px; bottom:16px;" (click)="predict()" color="dark" expand="block" [disabled]='prediction.name == ""'>
     <ion-icon slot="start" name="diamond-outline"></ion-icon>
     Predict
   </ion-button>
