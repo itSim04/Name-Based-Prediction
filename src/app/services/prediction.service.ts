@@ -13,11 +13,16 @@ export class PredictionService {
     return this.http.get<any>(`https://api.genderize.io?name=${name}`);
 
   }
-  
+
   predictAge(name: String) {
 
     return this.http.get<any>(`https://api.agify.io/?name=${name}`);
 
   }
 
+  predictNationality(name: String) {
+
+    return this.http.get<any>(`https://api.nationalize.io/?name=${name}`);
+
+  }
 }
