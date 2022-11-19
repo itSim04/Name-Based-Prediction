@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class GlobalPage {
 
-  constructor() {}
+  constructor() {
+
+    setInterval(() => console.log("Welcome"), 2000);
+
+  }
 
 }

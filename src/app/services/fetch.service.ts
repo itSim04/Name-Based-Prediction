@@ -14,4 +14,10 @@ export class FetchService {
 
   }
 
+  fetchName() {
+
+    return this.http.get<any>("https://namey.muffinlabs.com/name.json?frequency=all");
+
+  }
+
 }
