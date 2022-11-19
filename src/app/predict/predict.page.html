@@ -1,17 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Predict
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Predict</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Predict page"></app-explore-container>
-</ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Prediction</ion-card-title>
+    <ion-card-subtitle>{{name}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-icon slot="start" name="diamond-outline"></ion-icon>
+    <ion-label> Age: {{age}}</ion-label><br>
+    <ion-icon slot="start" name="diamond-outline"></ion-icon>
+    <ion-label> Nationality: {{nationality}}</ion-label><br>
+    <ion-icon slot="start" name="diamond-outline"></ion-icon>
+    <ion-label> Gender: {{gender}}</ion-label>
+  </ion-card-content>
+</ion-card>
