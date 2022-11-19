@@ -5,6 +5,4 @@ export interface PredictionModel {
     nationality: String[];
     gender: String;
 
-    isEmpty?(): Boolean;
-
 }

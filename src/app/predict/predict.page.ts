@@ -9,9 +9,11 @@ import { PredictionModel } from '../models/prediction.model';
 })
 export class PredictPage {
 
-  prediction: PredictionModel = { age: 0, gender: "", name: "", nationality: [], isEmpty: () => { return this.prediction.age == 0 || this.prediction.name == "" || this.prediction.gender == "" } };
+  available_prediction: Boolean = false;
+  prediction: PredictionModel = { age: 0, gender: "", name: "", nationality: []};
 
-  constructor(predictionService: PredictionService) { }
+  constructor(private predictionService: PredictionService) { }
+
 
   get name(): String {
 
@@ -33,7 +35,7 @@ export class PredictPage {
 
   get gender(): String {
 
-    return this.prediction.gender;
+    return this.prediction.gender.charAt(0).toUpperCase() + this.prediction.gender.slice(1);
 
   }
 
@@ -45,6 +47,8 @@ export class PredictPage {
 
   predict() {
 
+    this.available_prediction = true;
+    this.predictionService.build(this.prediction);
 
   }
 
