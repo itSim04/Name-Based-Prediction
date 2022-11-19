@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class WelcomePage {
 
+  dog_pic: String = "https://ionicframework.com/docs/img/demos/card-media.png";
+  
   constructor() {}
 
 }
