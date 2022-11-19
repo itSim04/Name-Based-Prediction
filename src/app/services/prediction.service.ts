@@ -7,4 +7,11 @@ import { Injectable } from '@angular/core';
 export class PredictionService {
 
   constructor(private http: HttpClient) { }
+
+  predictGender(name: String) {
+
+    return this.http.get<any>(`https://api.genderize.io?name=${name}`);
+
+  }
+  
 }
