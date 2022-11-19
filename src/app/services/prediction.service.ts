@@ -14,4 +14,10 @@ export class PredictionService {
 
   }
   
+  predictAge(name: String) {
+
+    return this.http.get<any>(`https://api.agify.io/?name=${name}`);
+
+  }
+
 }
