@@ -8,10 +8,38 @@ import { PredictionModel } from '../models/prediction.model';
 })
 export class PredictPage {
 
-  prediction: PredictionModel = { age: 0, gender: "", name: "", nationality: [], isEmpty: () => {return this.prediction.age == 0 || this.prediction.name == "" || this.prediction.gender == ""}};
+  prediction: PredictionModel = { age: 0, gender: "", name: "", nationality: [], isEmpty: () => { return this.prediction.age == 0 || this.prediction.name == "" || this.prediction.gender == "" } };
 
-  constructor() {}
+  constructor() { }
 
-  
+  get name(): String {
+
+    return this.prediction.name;
+
+  }
+
+  get nationality(): String {
+
+    let result: String = "";
+    this.prediction.nationality.forEach(
+
+      t => result += t + " "
+
+    );
+    return result.trim();
+
+  }
+
+  get gender(): String {
+
+    return this.prediction.gender;
+
+  }
+
+  get age(): Number {
+
+    return this.prediction.age;
+
+  }
 
 }
