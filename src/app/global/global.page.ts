@@ -13,14 +13,14 @@ export class GlobalPage {
   predictions: PredictionModel[] = [];
   constructor(private fetchService: FetchService, private predictionService: PredictionService) {
 
-    setInterval(() => fetchService.fetchName().subscribe(
-      
-      response => {
-        
-        this.predictions.push(predictionService.build(response);
-        
-      }), 2000);
-      
+    setInterval(() => fetchService.fetchName().subscribe(response => this.predictions.push(predictionService.build({name: response, age: 0, nationality: [], gender: ""}))), 5000);
+
+
+  }
+
+  emptyPrediction(prediction: PredictionModel) : Boolean {
+
+    return prediction.age == 0 || prediction.name == "" || prediction.gender == "" || prediction.nationality.length == 0;
 
   }
 

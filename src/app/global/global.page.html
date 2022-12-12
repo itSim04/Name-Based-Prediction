@@ -12,6 +12,20 @@
       <ion-title size="large">Global</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Global page"></app-explore-container>
+  <ion-card *ngFor="let prediction of predictions">
+    <div *ngIf="!emptyPrediction(prediction)">
+      <ion-card-header>
+        <ion-card-title>Prediction</ion-card-title>
+        <ion-card-subtitle>{{prediction.name}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon slot="start" name="diamond-outline"></ion-icon>
+        <ion-label> Age: {{prediction.age}}</ion-label><br>
+        <ion-icon slot="start" name="diamond-outline"></ion-icon>
+        <ion-label> Nationality: {{prediction.nationality}}</ion-label><br>
+        <ion-icon slot="start" name="diamond-outline"></ion-icon>
+        <ion-label> Gender: {{prediction.gender}}</ion-label>
+      </ion-card-content>
+    </div>
+  </ion-card>
 </ion-content>
